@@ -48,7 +48,7 @@ Our model is a *5*-layers Convolution Neural Networks with: *2* max-pooling laye
 It was then trained to minimize the squared error loss between groundtruth and predicted CTRs.
 
 <p align="center">
-    <img src="https://github.com/Deepomatic/char-level-CNN-text-regression-tf/blob/master/images/graph.png" width="250">
+    <img src="https://github.com/Deepomatic/regression-char-level-cnn-tf/blob/master/images/graph.png" width="250">
 </p>
 
 Unlike *Zhang et al.* [1] where the last layers are fully connected layers with fixed entry size, we opted for a fully convolutional approach. Our model can thus process batches of different dimensions between *min_size* and *max_size* (here set to *96* and *156* repectively) characters by padding each title with *(0,0,...,0)* vectors to reach the maximum title length within the batch. When the title length was greater than *max_size*, we randomly choose a subset of it.
@@ -93,7 +93,7 @@ Results
 ===============================
 - squared error loss
 <p align="center">
-    <img src="https://github.com/Deepomatic/char-level-CNN-text-regression-tf/blob/master/images/loss.png" width="550">
+    <img src="https://github.com/Deepomatic/regression-char-level-cnn-tf/blob/master/images/loss.png" width="550">
 </p>
 *light blue = val, blue = train*.
 
@@ -129,7 +129,7 @@ def topk(sorted_like_preds, sorted_like_groundtrouth, step, res_dir):
 ````
 
 <p align="center">
-    <img src="https://github.com/Deepomatic/char-level-CNN-text-regression-tf/blob/master/images/topk.jpg" width="500">
+    <img src="https://github.com/Deepomatic/regression-char-level-cnn-tf/blob/master/images/topk.jpg" width="500">
 </p>
 
 Where a random guess will approximatively give an identity line with score *0.5*. (It will not be exactly an identity line because, according to our scoring function, pairs of same CTR eases global ranking)
@@ -154,7 +154,7 @@ def rank2(y_preds, y_val, step, res_dir):
 ````
 
 <p align="center">
-    <img src="https://github.com/Deepomatic/char-level-CNN-text-regression-tf/blob/master/images/rank2.jpg" width="500">
+    <img src="https://github.com/Deepomatic/regression-char-level-cnn-tf/blob/master/images/rank2.jpg" width="500">
 </p>
 
 Where a random guess will give a constant function equal to *0.5*.
