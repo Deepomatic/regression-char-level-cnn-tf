@@ -11,6 +11,8 @@ In less structured tasks like text classification, character-level CNN architect
 
 In this post we will present how this kind of architecture can be applied to click-through rate prediction using TenforFlow and using only a few training samples. In particular, we are interested in predicting the click-through rate of Outbrain article recommendations, given only their title (in french language).
 
+The code to reproduce this post’s results can be found here: https://github.com/Deepomatic/regression-char-level-cnn-tf
+
 Data
 ===============================
 We have collected *46,458* pairs of article title / CTR from production data.
